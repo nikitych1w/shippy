@@ -2,11 +2,14 @@
 build:
 	cd shippy-cli-consignment && go build -o cli main.go
 	cd shippy-service-consignment && go build -o service main.go
+	cd shippy-service-vessel && go build -o vessel main.go
 
 .PHONY: generate
 generate:
 	protoc --proto_path=shippy-service-consignment/proto/consignment --go_out=shippy-service-consignment/proto/consignment \
-	--micro_out=shippy-service-consignment/proto/consignment consignment.proto
+	--micro_out=shippy-service-consignment/proto/consignment consignment.proto && \
+	protoc --proto_path=shippy-service-vessel/proto/vessel --go_out=shippy-service-vessel/proto/vessel \
+	--micro_out=shippy-service-vessel/proto/vessel vessel.proto
 
 .PHONY: clean
 clean:
@@ -14,7 +17,9 @@ clean:
 
 .PHONY: buildimg
 buildimg:
-	 docker build -t shippy-service-consignment ./shippy-service-consignment && docker build -t shippy-cli-consignment ./shippy-service-consignment
+	 docker build -t shippy-service-consignment ./shippy-service-consignment && \
+  	 docker build -t shippy-cli-consignment ./shippy-cli-consignment && \
+  	 docker build -t shippy-service-vessel ./shippy-service-vessel
 
 .PHONY: startsrv
 startsrv:

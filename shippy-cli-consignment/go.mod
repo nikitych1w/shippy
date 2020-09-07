@@ -7,6 +7,7 @@ go 1.14
 // replace github.com/nikitych1w/shippy/shippy-service-vessel => ../shippy-service-vessel
 
 replace google.golang.org/grpc => google.golang.org/grpc v1.26.0
+replace github.com/nikitych1w/shippy/shippy-service-consignment v0.0.0-20200907105938-46039416c14b => ../shippy-service-consignment
 
 require (
 	github.com/micro/go-micro v1.18.0 // indirect

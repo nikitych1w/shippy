@@ -8,9 +8,8 @@ import (
 
 	"context"
 
-	pb "github.com/nikitych1w/shippy/shippy-service-consignment/proto/consignment"
-
 	micro "github.com/micro/go-micro/v2"
+	pb "github.com/nikitych1w/shippy/shippy-service-consignment/proto/consignment"
 )
 
 const (
