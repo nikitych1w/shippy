@@ -30,3 +30,5 @@ startclient:
 
 # docker build -t shippy-service-consignment ./shippy-service-consignment
 # protoc --proto_path=. --go_out=. --micro_out=. proto/consignment/consignment.proto
+#sudo apt-get install golang-goprotobuf-dev
+#protoc --proto_path=proto/consignment1 --go_out=plugins=grpc:. consignment.proto
