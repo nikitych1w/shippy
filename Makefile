@@ -31,6 +31,10 @@ startsrv:
 startclient:
 	docker run shippy-cli-consignment
 
+.PHONY: startvessel
+startvessel:
+	docker run shippy-vessel-consignment
+
 .DEFAULT_GOAL := build
 
 # docker build -t shippy-service-consignment ./shippy-service-consignment
