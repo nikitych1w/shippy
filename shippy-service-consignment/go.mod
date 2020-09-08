@@ -16,7 +16,7 @@ require (
 	github.com/golang/protobuf v1.4.2
 	github.com/google/uuid v1.1.2 // indirect
 	github.com/imdario/mergo v0.3.11 // indirect
-	github.com/klauspost/compress v1.10.11 // indirect
+	github.com/klauspost/compress v1.11.0 // indirect
 	github.com/micro/go-micro/v2 v2.9.1
 	github.com/miekg/dns v1.1.31 // indirect
 	github.com/nats-io/jwt v1.0.1 // indirect

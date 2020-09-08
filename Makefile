@@ -1,8 +1,8 @@
 .PHONY: build
 build:
-	cd shippy-cli-consignment && go build -o cli main.go
-	cd shippy-service-consignment && go build -o service main.go
-	cd shippy-service-vessel && go build -o vessel main.go
+	cd shippy-cli-consignment && go build -o cli .
+	cd shippy-service-consignment && go build -o service .
+	cd shippy-service-vessel && go build -o vessel .
 
 .PHONY: generate
 generate:
