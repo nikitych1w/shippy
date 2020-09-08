@@ -9,7 +9,6 @@ import (
 	"context"
 
 	micro "github.com/micro/go-micro/v2"
-	//pb "github.com/nikitych1w/shippy/shippy-service-consignment/proto/consignment"
 	pb "github.com/nikitych1w/shippy/shippy-service-consignment/proto/consignment"
 )
 

@@ -3,13 +3,16 @@ build:
 	cd shippy-cli-consignment && go build -o cli .
 	cd shippy-service-consignment && go build -o service .
 	cd shippy-service-vessel && go build -o vessel .
+	cd shippy-service-user && go build -o user .
 
 .PHONY: generate
 generate:
 	protoc --proto_path=shippy-service-consignment/proto/consignment --go_out=shippy-service-consignment/proto/consignment \
 	--micro_out=shippy-service-consignment/proto/consignment consignment.proto && \
 	protoc --proto_path=shippy-service-vessel/proto/vessel --go_out=shippy-service-vessel/proto/vessel \
-	--micro_out=shippy-service-vessel/proto/vessel vessel.proto
+	--micro_out=shippy-service-vessel/proto/vessel vessel.proto && \
+	protoc --proto_path=shippy-service-user/proto/user --go_out=shippy-service-user/proto/user \
+	--micro_out=shippy-service-user/proto/user user.proto
 
 .PHONY: clean
 clean:
