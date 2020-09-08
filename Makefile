@@ -14,30 +14,40 @@ generate:
 .PHONY: clean
 clean:
 	cd build && rm *
+#
+#.PHONY: buildimg
+#buildimg:
+#	 docker build -t shippy-service-consignment ./shippy-service-consignment && \
+#  	 docker build -t shippy-cli-consignment ./shippy-cli-consignment && \
+#  	 docker build -t shippy-service-vessel ./shippy-service-vessel
+#
+#.PHONY: startsrv
+#startsrv:
+#	 docker run -p 50051:50051 \
+#		   -e MICRO_SERVER_ADDRESS=:50051 \
+#		   shippy-service-consignment
+#
+#.PHONY: startclient
+#startclient:
+#	docker run shippy-cli-consignment
+#
+#.PHONY: startvessel
+#startvessel:
+#	docker run shippy-vessel-consignment
 
-.PHONY: buildimg
-buildimg:
-	 docker build -t shippy-service-consignment ./shippy-service-consignment && \
-  	 docker build -t shippy-cli-consignment ./shippy-cli-consignment && \
-  	 docker build -t shippy-service-vessel ./shippy-service-vessel
 
-.PHONY: startsrv
-startsrv:
-	 docker run -p 50051:50051 \
-		   -e MICRO_SERVER_ADDRESS=:50051 \
-		   shippy-service-consignment
+.PHONY: run
+run:
+	docker-compose up
 
-.PHONY: startclient
-startclient:
-	docker run shippy-cli-consignment
 
-.PHONY: startvessel
-startvessel:
-	docker run shippy-vessel-consignment
-
+.PHONY: stop
+stop:
+	docker-compose down
 .DEFAULT_GOAL := build
 
 # docker build -t shippy-service-consignment ./shippy-service-consignment
 # protoc --proto_path=. --go_out=. --micro_out=. proto/consignment/consignment.proto
 #sudo apt-get install golang-goprotobuf-dev
 #protoc --proto_path=proto/consignment1 --go_out=plugins=grpc:. consignment.proto
+#docker stop $(docker ps -qa)
